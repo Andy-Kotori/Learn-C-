@@ -53,51 +53,51 @@ int main(){
 }
 
 // 类与指针与静态成员与this指针
-// #include<bits/stdc++.h>
-// using namespace std;
-// class myclass{
-//     private:
-//     int data;
-//     public:
-//     static int counter;
-//     void setter(int data){
-//         this->data=data;
-//         counter++;
-//     }
-//     void initial(){
-//         data=1;
-//     }
-//     int getter() const{
-//         return data;
-//     }
-//     static int getcounter(){
-//         return counter;
-//     }
-//     void compare(myclass myclass){
-//         cout<<this->getter()-myclass.getter()<<endl;
-//     }
-// };
-// void processptr(myclass* ptr){
-//     cout<<"Here: "<<ptr->getter()<<endl;//指针做函数参数
-// }
-// int myclass::counter=0;
-// int main(){
-//     myclass obj;
-//     myclass* ptr=&obj;
-//     ptr->initial();
-//     cout<<ptr->getter()<<endl;
-//     int a,b;
-//     cin>>a>>b;
-//     cout<<"before "<<myclass::getcounter()<<endl;
-//     ptr->setter(a);
-//     myclass obj2;
-//     obj2.setter(b);
-//     obj.compare(obj2);
-//     cout<<"after "<<myclass::getcounter()<<endl;
-//     cout<<ptr->getter()<<endl;
-//     processptr(&obj);
-//     return 0;
-// }
+#include<bits/stdc++.h>
+using namespace std;
+class myclass{
+    private:
+    int data;
+    public:
+    static int counter;
+    void setter(int data){
+        this->data=data;
+        counter++;
+    }
+    void initial(){
+        data=1;
+    }
+    int getter() const{
+        return data;
+    }
+    static int getcounter(){
+        return counter;
+    }
+    void compare(myclass myclass){
+        cout<<this->getter()-myclass.getter()<<endl;
+    }
+};
+void processptr(myclass* ptr){
+    cout<<"Here: "<<ptr->getter()<<endl;//指针做函数参数
+}
+int myclass::counter=0;
+int main(){
+    myclass obj;
+    myclass* ptr=&obj;
+    ptr->initial();
+    cout<<ptr->getter()<<endl;
+    int a,b;
+    cin>>a>>b;
+    cout<<"before "<<myclass::getcounter()<<endl;
+    ptr->setter(a);
+    myclass obj2;
+    obj2.setter(b);
+    obj.compare(obj2);
+    cout<<"after "<<myclass::getcounter()<<endl;
+    cout<<ptr->getter()<<endl;
+    processptr(&obj);
+    return 0;
+}
 
 // 向量vector
 // #include<bits/stdc++.h>
