@@ -1,60 +1,56 @@
-#include<bits/stdc++.h>
-
-enum DAY { MON=1, TUE, WED, THU, FRI, SAT, SUN };
-int main(){
-int x, y, z;
-x = 10;
-y = 20;
-z = 30;
-DAY yesterday, today, tomorrow;
-yesterday = MON;
-today = TUE;
-tomorrow = WED;
-printf("%d %d %d \n", yesterday, today, tomorrow);
-}
-
-
-
-
-
-//构造、析构、拷贝构造
 // #include<bits/stdc++.h>
-// using namespace std;
-// class Line{
-//     private:
-//     int* ptr;
-//     public:
-//     void getter(){
-//         cout<<ptr<<endl;
-//     }
-//     int ptrgetter(){
-//         return *ptr;
-//     }
-//     Line(int len){
-//         ptr=new int;
-//         *ptr=len;
-//         cout<<"create"<<endl;
-//     }
-//     Line(const Line& obj){
-//         ptr=new int;
-//         *ptr=*obj.ptr;
-//         cout<<"copy create"<<endl;
-//     }
-//     ~Line(){
-//         delete ptr;
-//         cout<<"deleted"<<endl;
-//     }
-// };
+
+// enum DAY { MON=1, TUE, WED, THU, FRI, SAT, SUN };
 // int main(){
-//     int a;
-//     cin>>a;
-//     Line line1=a;
-//     line1.getter();
-//     cout<<line1.ptrgetter()<<endl;
-//     Line line2=line1;
-//     cout<<line2.ptrgetter()<<endl;
-//     return 0;
+// int x, y, z;
+// x = 10;
+// y = 20;
+// z = 30;
+// DAY yesterday, today, tomorrow;
+// yesterday = MON;
+// today = TUE;
+// tomorrow = WED;
+// printf("%d %d %d \n", yesterday, today, tomorrow);
 // }
+
+// 构造、析构、拷贝构造
+#include<bits/stdc++.h>
+using namespace std;
+class Line{
+    private:
+    int* ptr;
+    public:
+    void getter(){
+        cout<<ptr<<endl;
+    }
+    int ptrgetter(){
+        return *ptr;
+    }
+    Line(int len){
+        ptr=new int;
+        *ptr=len;
+        cout<<"create"<<endl;
+    }
+    Line(const Line& obj){
+        ptr=new int;
+        *ptr=*obj.ptr;
+        cout<<"copy create"<<endl;
+    }
+    ~Line(){
+        delete ptr;
+        cout<<"deleted"<<endl;
+    }
+};
+int main(){
+    int a;
+    cin>>a;
+    Line line1=a;
+    line1.getter();
+    cout<<line1.ptrgetter()<<endl;
+    Line line2=line1;
+    cout<<line2.ptrgetter()<<endl;
+    return 0;
+}
 
 // 类与指针与静态成员与this指针
 // #include<bits/stdc++.h>
