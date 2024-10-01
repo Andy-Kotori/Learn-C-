@@ -1,103 +1,103 @@
-// #include<bits/stdc++.h>
+#include<bits/stdc++.h>
 
-// enum DAY { MON=1, TUE, WED, THU, FRI, SAT, SUN };
-// int main(){
-// int x, y, z;
-// x = 10;
-// y = 20;
-// z = 30;
-// DAY yesterday, today, tomorrow;
-// yesterday = MON;
-// today = TUE;
-// tomorrow = WED;
-// printf("%d %d %d \n", yesterday, today, tomorrow);
-// }
+enum DAY { MON=1, TUE, WED, THU, FRI, SAT, SUN };
+int main(){
+int x, y, z;
+x = 10;
+y = 20;
+z = 30;
+DAY yesterday, today, tomorrow;
+yesterday = MON;
+today = TUE;
+tomorrow = WED;
+printf("%d %d %d \n", yesterday, today, tomorrow);
+}
 
 // 构造、析构、拷贝构造
-#include<bits/stdc++.h>
-using namespace std;
-class Line{
-    private:
-    int* ptr;
-    public:
-    void getter(){
-        cout<<ptr<<endl;
-    }
-    int ptrgetter(){
-        return *ptr;
-    }
-    Line(int len){
-        ptr=new int;
-        *ptr=len;
-        cout<<"create"<<endl;
-    }
-    Line(const Line& obj){
-        ptr=new int;
-        *ptr=*obj.ptr;
-        cout<<"copy create"<<endl;
-    }
-    ~Line(){
-        delete ptr;
-        cout<<"deleted"<<endl;
-    }
-};
-int main(){
-    int a;
-    cin>>a;
-    Line line1=a;
-    line1.getter();
-    cout<<line1.ptrgetter()<<endl;
-    Line line2=line1;
-    cout<<line2.ptrgetter()<<endl;
-    return 0;
-}
+// #include<bits/stdc++.h>
+// using namespace std;
+// class Line{
+//     private:
+//     int* ptr;
+//     public:
+//     void getter(){
+//         cout<<ptr<<endl;
+//     }
+//     int ptrgetter(){
+//         return *ptr;
+//     }
+//     Line(int len){
+//         ptr=new int;
+//         *ptr=len;
+//         cout<<"create"<<endl;
+//     }
+//     Line(const Line& obj){
+//         ptr=new int;
+//         *ptr=*obj.ptr;
+//         cout<<"copy create"<<endl;
+//     }
+//     ~Line(){
+//         delete ptr;
+//         cout<<"deleted"<<endl;
+//     }
+// };
+// int main(){
+//     int a;
+//     cin>>a;
+//     Line line1=a;
+//     line1.getter();
+//     cout<<line1.ptrgetter()<<endl;
+//     Line line2=line1;
+//     cout<<line2.ptrgetter()<<endl;
+//     return 0;
+// }
 
-// 类与指针与静态成员与this指针
-#include<bits/stdc++.h>
-using namespace std;
-class myclass{
-    private:
-    int data;
-    public:
-    static int counter;
-    void setter(int data){
-        this->data=data;
-        counter++;
-    }
-    void initial(){
-        data=1;
-    }
-    int getter() const{
-        return data;
-    }
-    static int getcounter(){
-        return counter;
-    }
-    void compare(myclass myclass){
-        cout<<this->getter()-myclass.getter()<<endl;
-    }
-};
-void processptr(myclass* ptr){
-    cout<<"Here: "<<ptr->getter()<<endl;//指针做函数参数
-}
-int myclass::counter=0;
-int main(){
-    myclass obj;
-    myclass* ptr=&obj;
-    ptr->initial();
-    cout<<ptr->getter()<<endl;
-    int a,b;
-    cin>>a>>b;
-    cout<<"before "<<myclass::getcounter()<<endl;
-    ptr->setter(a);
-    myclass obj2;
-    obj2.setter(b);
-    obj.compare(obj2);
-    cout<<"after "<<myclass::getcounter()<<endl;
-    cout<<ptr->getter()<<endl;
-    processptr(&obj);
-    return 0;
-}
+// // 类与指针与静态成员与this指针
+// #include<bits/stdc++.h>
+// using namespace std;
+// class myclass{
+//     private:
+//     int data;
+//     public:
+//     static int counter;
+//     void setter(int data){
+//         this->data=data;
+//         counter++;
+//     }
+//     void initial(){
+//         data=1;
+//     }
+//     int getter() const{
+//         return data;
+//     }
+//     static int getcounter(){
+//         return counter;
+//     }
+//     void compare(myclass myclass){
+//         cout<<this->getter()-myclass.getter()<<endl;
+//     }
+// };
+// void processptr(myclass* ptr){
+//     cout<<"Here: "<<ptr->getter()<<endl;//指针做函数参数
+// }
+// int myclass::counter=0;
+// int main(){
+//     myclass obj;
+//     myclass* ptr=&obj;
+//     ptr->initial();
+//     cout<<ptr->getter()<<endl;
+//     int a,b;
+//     cin>>a>>b;
+//     cout<<"before "<<myclass::getcounter()<<endl;
+//     ptr->setter(a);
+//     myclass obj2;
+//     obj2.setter(b);
+//     obj.compare(obj2);
+//     cout<<"after "<<myclass::getcounter()<<endl;
+//     cout<<ptr->getter()<<endl;
+//     processptr(&obj);
+//     return 0;
+// }
 
 // 向量vector
 // #include<bits/stdc++.h>
