@@ -96,17 +96,17 @@
     },
     "C_Cpp.errorSquiggles": "enabled",
  
-    "files.exclude": {  
-        "**/*.ilk": true,  
-        "**/*.obj": true,  
-        "**/*.pdb": true,  
-        "**/*.exe": true  
-    },  
-    // 如果你也想在搜索时排除这些文件，可以添加如下配置  
-    "search.exclude": {  
-        "**/*.ilk": true,  
-        "**/*.obj": true,  
-        "**/*.pdb": true,  
-        "**/*.exe": true  
-    }  
+    // "files.exclude": {  
+    //     "**/*.ilk": true,  
+    //     "**/*.obj": true,  
+    //     "**/*.pdb": true,  
+    //     "**/*.exe": true  
+    // },  
+    // // 如果你也想在搜索时排除这些文件，可以添加如下配置  
+    // "search.exclude": {  
+    //     "**/*.ilk": true,  
+    //     "**/*.obj": true,  
+    //     "**/*.pdb": true,  
+    //     "**/*.exe": true  
+    // }  
 }
