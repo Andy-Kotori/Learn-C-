@@ -1,17 +1,34 @@
-#include<bits/stdc++.h>
-
-enum DAY { MON=1, TUE, WED, THU, FRI, SAT, SUN };
+#include<iostream>
+using namespace std;
 int main(){
-int x, y, z;
-x = 10;
-y = 20;
-z = 30;
-DAY yesterday, today, tomorrow;
-yesterday = MON;
-today = TUE;
-tomorrow = WED;
-printf("%d %d %d \n", yesterday, today, tomorrow);
+    int* a;
+    cout<<a<<endl;
+    int* c=NULL;
+    int b=3;
+    a=&b;
+    c=a;
+    cout<<a<<" "<<&b<<" "<<c<<" "<<*c<<endl;
+    return 0;
 }
+
+
+
+
+
+// #include<bits/stdc++.h>
+
+// enum DAY { MON=1, TUE, WED, THU, FRI, SAT, SUN };
+// int main(){
+// int x, y, z;
+// x = 10;
+// y = 20;
+// z = 30;
+// DAY yesterday, today, tomorrow;
+// yesterday = MON;
+// today = TUE;
+// tomorrow = WED;
+// printf("%d %d %d \n", yesterday, today, tomorrow);
+// }
 
 // 构造、析构、拷贝构造
 // #include<bits/stdc++.h>

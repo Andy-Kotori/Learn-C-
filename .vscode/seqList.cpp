@@ -1,9 +1,10 @@
 #include "seqList.h"
+
 template <class elemType>
 seqList<elemType>::seqList(int size){
     elem=new elemType[size];
-    int maxSize=size-1;
-    int len=0;
+    maxSize=size-1;
+    len=0;
 };
 
 template <class elemType>
@@ -23,7 +24,7 @@ template <class elemType>
 int seqList<elemType>::find(const elemType& e) const {
     int i;
     elem[0]=e;
-    for (i=len; i=0; i--){
+    for (i=len; i>=0; i--){
         if (elem[i]==e){
             break;
         }   
@@ -33,18 +34,23 @@ int seqList<elemType>::find(const elemType& e) const {
 
 template <class elemType>
 void seqList<elemType>::insert(int i, const elemType& e){
-    cout<<i<<" "<<e<<endl;
-    cout<<this->len<<" "<<this->maxSize<<endl;
+    // cout<<i<<" "<<e<<endl;
+    // cout<<this->len<<" "<<this->maxSize<<endl;
     int k;
-    if ((i<1)||(i>=len+1)){
+    if ((i<1)||(i>len+1)){
         return;
+        // cout<<"insert case 1"<<endl;
     }
-    if (len>=maxSize){
+    else if (len>=maxSize){
+        // cout<<"insert case 2"<<endl;
         doubleSpace();
     }
-    for (k=len; k>i; k--){
-        cout<<k<<endl;
+    else 
+    {for (k=len+1; k>i; k--){
+        // cout<<"insert case 3"<<endl;
+        // cout<<k<<endl;
         elem[k+1]=elem[k];
+    }
     }
     elem[i]=e;
     len++;
@@ -53,7 +59,7 @@ void seqList<elemType>::insert(int i, const elemType& e){
 template <class elemType>
 void seqList<elemType>::remove(int i, const elemType& e){
     int k;
-    if (i<1)||(i>=len+1){
+    if ((i<1)||(i>=len+1)){
         return;
     }
     for (k=i; k<len; k++){
@@ -69,7 +75,7 @@ elemType seqList<elemType>::get(int i) const {
 
 int main()
 {
-    seqList<int> list1(20), list2(20), list3(20);
+    seqList<int> list1(11), list2(11), list3(11);
     int i,j,x;
     int len1, len3;
 
@@ -82,6 +88,11 @@ int main()
         cin>>x;
     }
 
+    for (int i=1; i<=list1.length(); i++){
+        cout<<list1.get(i)<<" ";
+    }
+    cout<<endl;
+
     i=1;
     cout<<"second list"<<endl;
     cin>>x;
@@ -91,15 +102,22 @@ int main()
         cin>>x;
     }
 
+    for (int i=1; i<=list2.length(); i++){
+        cout<<list2.get(i)<<" ";
+    }
+    cout<<endl;
+
     len1=list1.length();
     j=1;
     for (i=1; i<=len1; i++){
         x=list1.get(i);
         if (list2.find(x)!=0){
+            // cout<<"find one"<<endl;
             list3.insert(j,x);
             j++;
         }
     }
+    // cout<<j<<endl;
     
     cout<<"elements communs"<<endl;
     len3=list3.length();

@@ -43,6 +43,7 @@ class linkList{
     int find(const elemType& e) const;
     void insert(int i, const elemType& e);
     void insertlist(const elemType a[], int n);
+    void output() const;
     void remove(int i, elemType& e);
     void reverse();
     void clear();

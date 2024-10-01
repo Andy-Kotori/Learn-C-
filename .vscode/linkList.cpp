@@ -47,7 +47,7 @@ void linkList<elemType>::remove(int i, elemType& e){
         return;
     }
     node<elemType>* p=this->head;
-    int j=0
+    int j=0;
     while (p && j<i-1){
         j++;
         p=p->next;
@@ -95,13 +95,20 @@ int linkList<elemType>::find(const elemType& e) const{
 
 template <class elemType>
 void linkList<elemType>::clear(){
-    node<elemType> *p, *q;
+    // node<elemType> *p, *q;
+    // p=head->next;
+    // head->next=NULL;
+    // while (p){
+    //     q=p->next;
+    //     delete[] p;
+    //     p=q;
+    // }
+    node<elemType> *p;
     p=head->next;
-    head->next=NULL;
     while (p){
-        q=p->next;
+        head->next=p->next;
         delete[] p;
-        p=q;
+        p=head->next;
     }
 }
 
@@ -133,6 +140,14 @@ void linkList<elemType>::reverse(){
 }
 
 template<class elemType>
+void linkList<elemType>::output() const{
+    for (int i=1; i<=length(); i++){
+        cout<<get(i)<<" ";
+    }
+    cout<<endl;
+}
+
+template<class elemType>
 linkList<elemType>::~linkList(){}
 
 int main(){
@@ -140,14 +155,11 @@ int main(){
     int a[5]={1,2,3,4,5};
     linkList<int> list1;
     list1.insertlist(a, 5);
-    for (int i=1; i<=5; i++){
-        cout<<list1.get(i)<<" ";
-    }
-    cout<<endl;
+    list1.output();
     list1.reverse();
-    for (int i=1; i<=5; i++){
-        cout<<list1.get(i)<<" ";
-    }
+    list1.output();
     cout<<list1.find(3)<<endl;
-
+    list1.insert(6,6);
+    list1.output();
+    return 0;
 }
